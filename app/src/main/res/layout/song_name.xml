@@ -9,8 +9,8 @@
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="5dp"
-        app:cardCornerRadius="10dp">
+        android:layout_margin="2dp"
+        app:cardCornerRadius="2dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -21,9 +21,9 @@
             <ImageView
                 android:layout_width="45dp"
                 android:layout_height="45dp"
-
+                android:src="@drawable/music_icon"
                 android:layout_marginRight="20dp"/>
-<!--            android:src="@drawable/music_icon"-->
+
 
             <TextView
                 android:id="@+id/SongName"

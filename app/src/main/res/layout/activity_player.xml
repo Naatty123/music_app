@@ -36,49 +36,54 @@
             android:layout_marginBottom="8dp"
             android:src="@drawable/music_icon" />
 
-
-        <RelativeLayout
+        <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
-            android:layout_height="68dp">
+            android:layout_height="match_parent" >
 
-            <SeekBar
-                android:layout_width="250dp"
-                android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:id="@+id/SeekBar"
-                android:layout_alignParentBottom="true"
-                android:layout_margin="20dp"
-                android:layout_marginBottom="40dp"/>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="68dp">
 
-
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/TxtSongStart"
-                android:layout_toLeftOf="@id/SeekBar"
-                android:layout_centerInParent="true"
-                android:layout_alignParentLeft="false"
-                android:singleLine="true"
-                android:layout_marginLeft="20dp"
-                android:text="0:00"
-                android:textSize="15dp" />
+                <SeekBar
+                    android:id="@+id/SeekBar"
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerInParent="true"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginBottom="20dp" />
 
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/TxtSongEnd"
-                android:layout_toRightOf="@id/SeekBar"
-                android:layout_centerInParent="true"
-                android:layout_alignParentRight="false"
-                android:layout_marginRight="20dp"
-                android:singleLine="true"
-                android:text="0:00"
-                android:textSize="15dp" />
+                <TextView
+                    android:id="@+id/TxtSongStart"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="false"
+                    android:layout_centerInParent="true"
+                    android:layout_marginLeft="20dp"
+                    android:layout_toLeftOf="@id/SeekBar"
+                    android:singleLine="true"
+                    android:text="0:00"
+                    android:textSize="15dp" />
 
 
-        </RelativeLayout>
+                <TextView
+                    android:id="@+id/TxtSongEnd"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="false"
+                    android:layout_centerInParent="true"
+                    android:layout_marginRight="20dp"
+                    android:layout_toRightOf="@id/SeekBar"
+                    android:singleLine="true"
+                    android:text="0:00"
+                    android:textSize="15dp" />
+
+
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
 
 
     </LinearLayout>
@@ -88,7 +93,8 @@
         android:layout_height="0dp"
         android:layout_weight="3">
 
-        <RelativeLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/relativeLayout"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
@@ -96,45 +102,65 @@
                 android:id="@+id/BtnPlay"
                 android:layout_width="70dp"
                 android:layout_height="70dp"
-                android:layout_centerHorizontal="true"
-                android:background="@drawable/pause_song_icon"/>
+                android:background="@drawable/pause_song_icon"
+                android:backgroundTint="#0E0D0D"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintHorizontal_bias="0.527"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.731" />
 
             <Button
                 android:id="@+id/BtnNext"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:layout_marginTop="15dp"
+                android:layout_marginEnd="92dp"
                 android:background="@drawable/next_song_icon"
-                android:layout_toRightOf="@id/BtnPlay"/>
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toEndOf="@+id/BtnPlay"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.692" />
 
             <Button
                 android:id="@+id/BtnPrevious"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:layout_marginTop="15dp"
+                android:layout_marginStart="116dp"
                 android:background="@drawable/previews_icon"
-                android:layout_toLeftOf="@id/BtnPlay"/>
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/BtnPlay"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.692" />
 
             <Button
                 android:id="@+id/BtnFastForward"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
-                android:layout_marginTop="20dp"
+                android:layout_marginEnd="28dp"
+                android:layout_marginBottom="52dp"
                 android:background="@drawable/forward_icon"
-                android:layout_toRightOf="@id/BtnNext"/>
+                android:visibility="invisible"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
 
             <Button
                 android:id="@+id/BtnFastRewind"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
-                android:layout_marginTop="20dp"
+                android:layout_marginStart="56dp"
+                android:layout_marginBottom="52dp"
                 android:background="@drawable/rewind_icon"
-                android:layout_toLeftOf="@id/BtnPrevious"/>
+                android:visibility="invisible"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
 
 
-
-
-        </RelativeLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
     </LinearLayout>
 
